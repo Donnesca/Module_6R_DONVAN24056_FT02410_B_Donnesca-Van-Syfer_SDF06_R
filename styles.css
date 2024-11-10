@@ -1,23 +1,150 @@
 /* Base Styles */
-
 :root {
-    font-size: 10px;
+  font-size: 10px;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", Arial, sans-serif;
-    min-height: 100vh;
-    background-color: #fafafa;
-    color: #262626;
-    padding-bottom: 3rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #262626;
+  padding-bottom: 6rem;
+  transition: ease;
 }
 
-img {
-    display: block;
+.container {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-weight: 1;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile-image > img {
+  cursor: pointer;
+  border: 5px, solid;
+  border-color: rgb(0, 70, 33);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+}
+
+.profile-user-settings {
+  display: inline-flex;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile-grid {
+  line-height: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.profile-stats > ul {
+  display: inline-flex;
+  word-spacing: 5px;
+  list-style-type: none;
+  position: static;
+  text-indent: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 25px;
+  cursor: pointer;
+  row-gap: 10px;
+  gap: 10px;
+}
+
+.gallery-image {
+  width: 169.5px;
+  height: 399.72px;
+}
+
+.gallery-item-type {
+  position: relative;
+  top: -390px;
+  right: -120px;
+}
+
+.gallerry-item-info,
+ul {
+  display: inline-flex;
+  list-style-type: none;
+  position: relative;
+  top: -190px;
+  right: 20px;
+}
+
+.gallerry-item,
+.gallery-image:hover {
+  background-color: #1e1d1d63;
+  opacity: 0.9;
+}
+
+.gallerry-item-info > span > i {
+  color: #fafafa;
+  opacity: 0.2;
+}
+
+.gallerry-item-info,
+span:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #004106;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 0.4s linear infinite;
+  animation: spin 0.4s linear infinite;
+  align-self: flex-end;
+  position: relative;
+  right: 275px;
+  top: 100px;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    grid-template-columns: 2, 1fr;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    grid-template-columns: 1fr;
+  }
 }
